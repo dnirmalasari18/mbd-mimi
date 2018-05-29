@@ -12,10 +12,14 @@
 */
 
 Route::get('/', function () {
-    echo "sadad";
-    //return view('welcome');
+    return view('home');
 });
-
-/*Auth::routes();*/
+Route::get('/barang','BarangController@barangIndex' );
+Route::get('/barang/merk/{namamerk}','BarangController@barangMerk' );
+Route::get('/barang/warna/{namawarna}','BarangController@barangWarna' );
+Route::get('/barang/ukuran/{namaukuran}','BarangController@barangUkuran' );
+Route::get('/barang/kategori/{namakategori}','BarangController@barangKategori' );
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

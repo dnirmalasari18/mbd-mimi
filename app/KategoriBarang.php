@@ -8,4 +8,7 @@ class KategoriBarang extends Model
 {
     //
     
+    public function barang(){
+    	return $this->hasMany('App\Barang');
+    }
 }

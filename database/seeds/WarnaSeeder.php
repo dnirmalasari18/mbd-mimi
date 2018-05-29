@@ -1,0 +1,104 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use App\Warna;
+class WarnaSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        //
+        Warna::create([
+        	'nama_warna'=>'Beige',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Black',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Blue',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Gold',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Green',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Grey',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Multi',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Navy',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Orange',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Pink',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Purple',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Red',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Silver',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'White',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Yellow',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Maroon',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Peach',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Bone',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Nude',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Tosca',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Fuschia',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Aqua',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Aero',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Almond',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Amber',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Cream',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Dandelion',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Desire',
+    	]);
+    	Warna::create([
+        	'nama_warna'=>'Yellow',
+    	]);
+
+    }
+}

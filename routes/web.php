@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "sadad";
+    //return view('welcome');
 });
 
-Auth::routes();
+/*Auth::routes();*/
 
 Route::get('/home', 'HomeController@index')->name('home');

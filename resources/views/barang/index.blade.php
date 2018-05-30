@@ -26,13 +26,12 @@ th, td {
 </div>
 <h2>Baranng</h2>
 @if(count($barang)>0)
-  <table style="width:100%">
+  <table style="width:50%">
       <tr>
         <th>Barang</th>
         <td>Keterangan</td>
       </tr>
   @foreach($barang as $b)
-    
       <tr>
         <th rowspan="7">Sebuah foto</th>
         <td>Nama: {{$b->nama}}</td>
@@ -55,7 +54,6 @@ th, td {
       <tr>
         <td>Stok: {{$b->stok}}</td>
       </tr>
-    
   @endforeach
   </table>
 @endif

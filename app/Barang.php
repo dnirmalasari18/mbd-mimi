@@ -9,15 +9,19 @@ class Barang extends Model
     //
     protected $table = 'barang';
     public function Merk(){
-    	return $this->belongsTo('App\Merk','merk_id','id');
+    	return $this->belongsTo('App\Merk','me_id','me_id');
     }
     public function Warna(){
-    	return $this->belongsTo('App\Warna','warna_id','id');
+    	return $this->belongsTo('App\Warna','w_id','w_id');
     }
     public function Ukuran(){
-    	return $this->belongsTo('App\Ukuran','ukuran_id','id');
+    	return $this->belongsTo('App\Ukuran','u_id','u_id');
     }
     public function KategoriBarang(){
-    	return $this->belongsTo('App\KategoriBarang','kategori_barang_id','id');
+    	return $this->belongsTo('App\KategoriBarang','kb_id','kb_id');
+    }
+
+    public function Transaksi(){
+        return $this->hasMany('App\Transaksi','b_id','b_id');
     }
 }

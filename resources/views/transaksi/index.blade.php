@@ -15,12 +15,13 @@ table, th, td {
 
 <h2>Transaksi Index</h2>
 <a href={{url('/transaksi/addTransaksi ')}}><button>Add Transaksi</button></a>
-<a href={{url('/barang/log')}}><button>Log</button></a>
+<a href={{url('/transaksi/log')}}><button>Log</button></a>
 <button>Function</button>
 <button>Procedure</button>
 <button>Index</button>
 <button>Join</button>
 <button>Cursor</button>
+@if(count($transaksi)>0)
 <table style="width:100%">
   <tr>
     <th>Member</th>
@@ -55,8 +56,42 @@ table, th, td {
     <td>Provinsi</td>
     <td>Kategori Barang</td>
   </tr>
+  @foreach($transaksi as $t)
+  @if($t->barang!=NULL)
+  <tr>
+    <td>{{$t->member->m_nama}}</td>
+    <td>{{$t->barang->b_nama}}</td>
+    <td rowspan="5">{{$t->t_jumlah_barang}}</td>
+    <td rowspan="5">{{$t->t_total_harga}}</td>
+    <td rowspan="5">{{$t->t_status_transaksi}}</td>
+    <td rowspan="5">
+      <form>
+      <button formaction="{{url('transaksi/edit')}}" formmethod="get" name="transaksi_id" value="{{$t->t_id}}">Edit</button>
+      <br>
+      <button formaction="{{url('transaksi/delete')}}" formmethod="get" name="transaksi_id" value="{{$t->t_id}}">Delete</button>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td>{{$t->member->m_alamat}}</td>
+    <td>{{$t->barang->merk->me_nama}}</td>
+  </tr>
+  <tr>
+    <td>{{$t->member->m_kecamatan}}</td>
+    <td>{{$t->barang->warna->w_nama}}</td>
+  </tr>
+  <tr>
+    <td>{{$t->member->m_kota}}</td>
+    <td>{{$t->barang->ukuran->u_nama}}</td>
+  </tr>
+  <tr>
+    <td>{{$t->member->m_provinsi}}</td>
+    <td>{{$t->barang->kategoribarang->kb_nama_jenis}}</td>
+  </tr>
+  @endif
+  @endforeach
 </table>
-
+@endif
 
 </body>
 </html>

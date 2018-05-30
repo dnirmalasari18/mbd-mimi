@@ -29,6 +29,19 @@ table, th, td {
     <th>Tanggal Perubahan</th>
     <th>Status</th>
   </tr>
+  <tr>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+  </tr>
 </table>
 
 

@@ -13,23 +13,34 @@ table, th, td {
 </head>
 <body>
 
-<h2>Log Barang</h2>
+<h2>Log Transaksi</h2>
 
 <table style="width:100%">
   <tr>
-    <th>Merk</th>
-    <th>Warna</th>
-    <th>Ukuran</th>
-    <th>Kategori Barang</th>
-    <th>Nama Barang</th>
-    <th>Harga</th>
-    <th>Stok</th>
-    <th>Foto</th>
+    <th>ID</th>
+    <th>Member</th>
+    <th>Barang</th>
+    <th>Tanggal Transaksi</th>
+    <th>Jumlah Barang</th>
+    <th>Total Harga</th>
     <th>Tanggal Perubahan</th>
     <th>Status</th>
   </tr>
+  <tr>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+      <td>o</td>
+  </tr>
 </table>
-
+    
 
 </body>
 </html>

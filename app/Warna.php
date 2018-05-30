@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Warna extends Model
 {
     //
+    protected $table = 'warna';
     public function barang(){
     	return $this->hasMany('App\Barang');
     }

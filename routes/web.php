@@ -36,6 +36,9 @@ Route::get('barang/log','BarangController@logBarang');
 Route::get('transaksi','TransaksiController@transaksiIndex');
 Route::get('transaksi/addTransaksi','TransaksiController@transaksiAdd');
 Route::post('transaksi/addTransaksi/create','TransaksiController@transaksiStore');
+Route::post('transaksi/edit/{id}','TransaksiController@transaksiUpdate');
+Route::get('transaksi/edit','TransaksiController@transaksiEdit');
+Route::get('transaksi/delete','TransaksiController@transaksiDestroy');
 
 Route::get('/member','MemberController@memberIndex');
 Auth::routes();

@@ -71,14 +71,14 @@ class BarangController extends Controller
 			//Barang::create(Input::all());
 
             $b->save();
-            return redirect('/barang')->with('message', 'Barang has been added!');
+            return redirect('/barang');
     }
 
 	public function barangDestroy(){
 		$b =Barang::find(Input::get('barang_id'));
 		//echo $b;
         $b->delete();
-        return redirect('barang')->with('message', 'Barang has been deleted!');
+        return redirect('barang');
 	}
 
 	public function barangEdit(){

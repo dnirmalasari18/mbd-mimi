@@ -17,6 +17,7 @@ table, th, td {
 
 <table style="width:100%">
   <tr>
+    <th>ID</th>
     <th>Merk</th>
     <th>Warna</th>
     <th>Ukuran</th>

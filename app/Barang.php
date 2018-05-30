@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     //
+    protected $table = 'barang';
     public function Merk(){
     	return $this->belongsTo('App\Merk','merk_id','id');
     }

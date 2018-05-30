@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksi;
+use App\Barang;
+use App\Ukuran;
+use App\Member;
+use App\Warna;
 class TransaksiController extends Controller
 {
     //
@@ -13,7 +17,11 @@ class TransaksiController extends Controller
     }
 
     public function transaksiAdd(){
-        return view('transaksi.addTransaksi');
+        $barang=Barang::all();
+        $member=Member::all();
+        $ukuran=Ukuran::all();
+        $warna=Warna::all();
+        return view('transaksi.addTransaksi')->with('warna',$warna)->with('member',$member)->with('barang',$barang)->with('ukuran',$ukuran);
     }
 
     public function transaksiStore(Request $r){
@@ -33,6 +41,6 @@ class TransaksiController extends Controller
     }
 
     public function logTransaksi(){
-      
+        return view('transaksi.logTransaksi');
     }
 }

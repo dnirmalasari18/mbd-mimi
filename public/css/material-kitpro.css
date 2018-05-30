@@ -2132,16 +2132,19 @@ output {
 .form-control,
 .form-group .form-control {
     border: 0;
-    background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+	width: 80%;
+	background: white;
     background-size: 0 2px, 100% 1px;
     background-repeat: no-repeat;
     background-position: center bottom, center calc(100% - 1px);
-    background-color: transparent;
+
     transition: background 0s ease-out;
     float: none;
     box-shadow: none;
-    border-radius: 0;
+    border-radius: 50px;
     font-weight: 400;
+	color: #ec008c;
+	font-weight: 500;
 }
 
 .form-control::-moz-placeholder,
@@ -2983,7 +2986,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 .navbar .navbar-form .form-group .form-control,
 .navbar .navbar-form .form-control {
     border-color: inherit;
-    color: inherit;
+    color: #ec008c;
     padding: 0;
     margin: 0;
     height: 28px;

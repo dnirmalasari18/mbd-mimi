@@ -1,9 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('/img/apple-icon.png')}}">
+	<link rel="icon" type="image/png" href="{{asset('/img/logo/logo_atas_landing_page.png')}}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="stylesheet" href="{{asset('/css/PNotifyBrightTheme.css')}}">
+	<link rel="stylesheet" href="{{asset('/css/animations.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<title>Pray.in</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('/css/material-kitpro.css')}}" rel="stylesheet"/>
+	<!-- PNotify -->
+		<script src="{{asset('/js/PNotify.js')}}" type="text/javascript"></script>
+		<script type="text/javascript">
+			window.centerModalStack = {
+				'dir1': 'down',
+				'firstpos1': 25,
+				'modal': true,
+				'overlayClose': true
+			};
+			PNotify.defaults.width = '400px';
+		</script>
 	
+	<style>
+		body{
+			background-image: url('/img/hijab1.jpg');
+			background-size: cover;
+			color: #ec008c;
+		}
+		label{
+			color: black;
+			font-size: 20px;
+			text-align: left;
+			font-weight: 700;
+			margin-top: 50px;
+		}
+	
+	</style>
 </head>
 <body>
+	<nav class="navbar navbar-rose">
+	                  <div class="container">
+	                    <!-- Brand and toggle get grouped for better mobile display -->
+	                    <div class="navbar-header">
+	                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	                        <span class="sr-only">Toggle navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                      </button>
+	                      <a class="navbar-brand" href="#pablo">MiMi's</a>
+	                    </div>
+
+	                    <!-- Collect the nav links, forms, and other content for toggling -->
+	                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	                      <ul class="nav navbar-nav">
+	                        <li class="active">
+	    						<a href="#pablo">Home</a>
+	    					</li>
+	                        <li>
+	    						<a href="#pablo">Member</a>
+	    					</li>
+							 <li class="active">
+	    						<a href="#pablo">Barang</a>
+	    					</li>
+	                        <li>
+	    						<a href="#pablo">Transaksi</a>
+	    					</li>
+	                      </ul>
+	                      <form class="navbar-form navbar-right" role="search">
+	                        <div class="form-group form-white">
+	                          <input type="text" class="form-control" placeholder="Search">
+	                        </div>
+	                        <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini"><i>S</i></button>
+	                      </form>
+
+	                    </div><!-- /.navbar-collapse -->
+	                  </div><!-- /.container-fluid -->
+	            </nav>
+<!--        end rose navbar -->
+<div class="animatedParent">
+<h1 style="text-align:center; margin-bottom:50px; font-weight:700" class="animated fadeIn">ADD BARANG</h1>
+	</div>
+<center><div style="width:30%; background-color:pink; border-radius:20px;">
 	{!! Form::open(['action' => 'BarangController@barangStore','method'=>'POST','enctype' => 'multipart/form-data','autocomplete'=>'off']) !!}
 						{{csrf_field()}}
 							
@@ -83,8 +172,30 @@
 					    <br>
 						<div class="dorne-add-listings-btn">
 							<br>
-							{{Form::submit('Submit',['class'=>'btn dorne-btn'])}}
+							{{Form::submit('Submit',['class'=>'btn btn-rose'])}}
 						</div>
 						{!! Form::close() !!}
+	</div></center>
+	
+	<!-- jQuery -->
+	<script src="{{asset('js/jquery.min.js')}}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{asset('js/bootstrap.min.js')}}"></script>
+	<!-- Bootstrap DateTimePicker -->
+	<script src="{{asset('js/moment.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
+	<!-- Stellar Parallax -->
+	<script src="{{asset('js/jquery.stellar.min.js')}}"></script>
+	<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{asset('js/modernizr-2.6.2.min.js')}}"></script>
+
+	<!-- Salvattore -->
+	<script src="{{asset('js/salvattore.min.js')}}"></script>
+	<script src="{{asset('js/css3-animate-it.js')}}"></script>
+	<!-- Flexslider -->
+	<script src="{{asset('js/jquery.flexslider-min.js')}}"></script>
 </body>
 </html>

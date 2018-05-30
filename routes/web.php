@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('home');
 });
+
+//barang
 Route::get('/barang','BarangController@barangIndex' );
 Route::get('/barang/merk/{namamerk}','BarangController@barangMerk' );
 Route::get('/barang/warna/{namawarna}','BarangController@barangWarna' );
@@ -24,10 +26,18 @@ Route::post('barang/addBarang/create','BarangController@barangStore');
 Route::get('/deleteBarang', 'BarangController@barangDestroy');
 Route::get	('/editBarang', 'BarangController@barangEdit');
 Route::put('/editBarang/update/{id}', 'BarangController@barangUpdate')->name('updateBarang');
+Route::get('barang/log','BarangController@logBarang');
+//yang belum function, procedure, index, join, cursor
+
+
+
+
+//transaksi
+Route::get('transaksi','TransaksiController@transaksiIndex');
+Route::get('transaksi/addTransaksi','TransaksiController@transaksiAdd');
 
 
 Route::get('/member','MemberController@memberIndex');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-

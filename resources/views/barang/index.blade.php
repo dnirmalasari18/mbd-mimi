@@ -8,7 +8,7 @@ table, th, td {
 }
 th, td {
     padding: 5px;
-    text-align: left;    
+    text-align: left;
 }
 </style>
 </head>
@@ -26,7 +26,7 @@ th, td {
 </div>
 <h2>Baranng</h2>
 <a href={{url('/barang/addBarang')}}><button>Add Barang</button></a>
-<button>Log</button>
+<a href={{url('/barang/log')}}><button>Log</button></a>
 <button>Function</button>
 <button>Procedure</button>
 <button>Index</button>

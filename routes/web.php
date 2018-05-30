@@ -19,6 +19,8 @@ Route::get('/barang/merk/{namamerk}','BarangController@barangMerk' );
 Route::get('/barang/warna/{namawarna}','BarangController@barangWarna' );
 Route::get('/barang/ukuran/{namaukuran}','BarangController@barangUkuran' );
 Route::get('/barang/kategori/{namakategori}','BarangController@barangKategori' );
+Route::get('barang/addBarang','BarangController@barangAdd');
+Route::post('barang/addBarang/create','BarangController@barangStore');
 
 Route::get('/member','MemberController@memberIndex');
 Auth::routes();

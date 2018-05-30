@@ -41,4 +41,12 @@ class BarangController extends Controller
     public function barangShow(){
     	$barang=Barang::find($id);
     }
+
+    public function barangAdd(){
+        return view('barang.addBarang');
+    }
+    
+    public function barangStore(Request $r){
+        echo "hehe";
+    }
 }

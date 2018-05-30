@@ -21,6 +21,10 @@ Route::get('/barang/ukuran/{namaukuran}','BarangController@barangUkuran' );
 Route::get('/barang/kategori/{namakategori}','BarangController@barangKategori' );
 Route::get('barang/addBarang','BarangController@barangAdd');
 Route::post('barang/addBarang/create','BarangController@barangStore');
+Route::get('/deleteBarang', 'BarangController@barangDestroy');
+Route::get	('/editBarang', 'BarangController@barangEdit');
+Route::put('/editBarang/update/{id}', 'BarangController@barangUpdate')->name('updateBarang');
+
 
 Route::get('/member','MemberController@memberIndex');
 Auth::routes();

@@ -26,11 +26,13 @@ th, td {
 </div>
 <h2>Baranng</h2>
 <a href={{url('/barang/addBarang')}}><button>Add Barang</button></a>
+<button>Log</button>
 <button>Function</button>
 <button>Procedure</button>
 <button>Index</button>
 <button>Join</button>
 <button>Cursor</button>
+
 @if(count($barang)>0)
   <table style="width:50%">
       <tr>
@@ -41,23 +43,26 @@ th, td {
   @foreach($barang as $b)
   <tr>
     <td rowspan="6">Foto<br>{{$b->nama}}</td>
-    <td>Merk{{$b->merk->nama_merk}}</td>
-    <td rowspan="6"><button>Edit</button><button>Delete</button></td>
+    <td>Merk: {{$b->merk->nama_merk}}</td>
+    <td rowspan="6"><form>
+		<button formmethod="get" formaction="/editBarang" type="submit" name="barang_id" value="{{$b->id}}">Edit</button><br>
+		<button formmethod="get" formaction="/deleteBarang" type="submit" name="barang_id" value="{{$b->id}}">Delete</button></form>
+	  </td>
   </tr>
   <tr>
-    <td>Warna{{$b->warna->nama_warna}}</td>
+    <td>Warna: {{$b->warna->nama_warna}}</td>
   </tr>
   <tr>
-    <td>Ukuran{{$b->ukuran->ukuran}}</td>
+    <td>Ukuran: {{$b->ukuran->ukuran}}</td>
   </tr>
   <tr>
-    <td>Kategori{{$b->kategoriBarang->nama_kategori}}</td>
+    <td>Kategori: {{$b->kategoriBarang->nama_kategori}}</td>
   </tr>
   <tr>
-    <td>Harga{{$b->harga}}</td>
+    <td>Harga: {{$b->harga}}</td>
   </tr>
   <tr>
-    <td>Stok{{$b->stok}}</td>
+    <td>Stok: {{$b->stok}}</td>
   </tr>
   @endforeach
   </table>

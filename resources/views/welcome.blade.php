@@ -4,12 +4,13 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pray.in - Katholik</title>
+	<title>MiMi's</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!-- Animation -->
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/animations.css" type="text/css">
@@ -26,7 +27,9 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	
+		
+		
 	</head>
 	<body>
 		<nav class="navbar navbar-rose">
@@ -79,8 +82,8 @@
 					<div class="fh5co-text">
 						<div class="container animatedParent">
 							<div class="row">
+								<h2>Welcome MiMi's Lovely Admin</h2>
 								<h1>MiMi's</h1>
-								<h2>Hijab Fashion Masa Kini</h2>
 							</div>
 						</div>
 					</div>
@@ -94,13 +97,75 @@
 			</div>
 		</div>
 		
+	    <div class="main main-raised">
+        <div class="section" style="background: #f857a6">
+               <div class="container">
+                   <h2 class="section-title" style="text-align:center; color:white">WHAT ARE YOU GONNA LOOKING AT?</h2>
+                   <div class="row">
+          <center><div class="menu">
+			<div class="maincontainer2 animatedParent katholik">
+			  <div class="thecard2 ">
+
+				<div class="thefront2 animated growIn">
+						<i class="large material-icons" style="font-size:100px; color:#ff0084 ; margin-top:100px">payment</i>
+						<p class="katholik-font">TRANSAKSI</p>
+				</div>
+
+				<div class="theback2">
+					<a href="{{url('/transaksi')}}">
+					<button class="btn btn-rose" style="margin-top:50%;">CLICK HERE</button>
+          </a>
+				</div>
+
+			  </div>
+			</div>
+
+			<div class="maincontainer2 animatedParent katholik">
+			  <div class="thecard2 ">
+
+				<div class="thefront2 animated growIn">
+						<i class="large material-icons" style="font-size:100px; color:#ff0084; margin-top:100px">person</i>
+						<p class="katholik-font">MEMBER</p>
+				</div>
+
+				<div class="theback2">
+					<a href="{{url('/member')}}">
+					<button class="btn btn-rose" style="margin-top:50%;">CLICK HERE</button>
+					</a>
+				</div>
+
+			  </div>
+			</div>
+			  
+			 <div class="maincontainer2 animatedParent katholik">
+			  <div class="thecard2 ">
+
+				<div class="thefront2 animated growIn">
+						<i class="large material-icons" style="font-size:100px; color:#ff0084;margin-top:100px">local_grocery_store</i>
+						<p class="katholik-font">BARANG</p>
+				</div>
+
+				<div class="theback2">
+					<a href="{{url('/barang')}}">
+					<button class="btn btn-rose" style="margin-top:50%;">CLICK HERE</button>
+					</a>
+				</div>
+
+			  </div>
+			</div>
+			  </div></center>
+                        </div>
+
+                   </div>
+               </div>
+        </div><!-- section -->	
 		
-		
+
 	<div id="fh5co-footer">
 		<div class="container">
 			<div class="row row-padded">
 				<div class="col-md-12 text-center">
-					<p class="to-animate">&copy; 2018 Heaven Finders. <br> Designed by Cornelia Natasha & Dewi Ayu Nirmalasari<br> Manajemen Basis Data D <br> MiMi's </p>
+					<p class="to-animate">&copy; 2018 MiMi Peri. <br> Designed by Cornelia Natasha & Dewi Ayu Nirmalasari<br> Manajemen Basis Data D <br> MiMi's </p>
 					<p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
 				</div>
 			</div>

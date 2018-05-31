@@ -1630,11 +1630,11 @@ p {
   position: relative;
   width: 350px;
   height: 400px;
-  margin-left: 21%;
+  margin-left: 18%;
   margin-top: 5%;
 }
 .katholik{
-	 background: #ff8c00;
+	 background: #f857a6;
 }
 
 .islam{
@@ -1657,7 +1657,7 @@ p {
 	color: #04756f;
 }
 .katholik-font{
-	color:  #ff8c00;
+	color: #f857a6
 }
 .buddha-font{
 	color: #d90000;
@@ -1681,6 +1681,8 @@ p {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
+  background-color: white;
+	border-radius: 50px;
 
 }
 
@@ -1703,8 +1705,8 @@ p {
   overflow: hidden;
   background: #fff;
   color: #000;
-  outline: 3px solid gold;
-  outline-offset: -30px;
+    background-color: white;
+	border-radius: 50px;
 
 }
 
@@ -1721,8 +1723,9 @@ p {
   color: #333;
   text-align: center;
   transform: rotateY(180deg);
-  outline: 3px solid gold;
-  outline-offset: -30px;
+
+    background-color: white;
+	border-radius: 50px;
 
 }
 
@@ -1959,3 +1962,17 @@ p {
 	text-transform: uppercase;
 	}
 }
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, html {
+  height: 100%;
+}
+
+

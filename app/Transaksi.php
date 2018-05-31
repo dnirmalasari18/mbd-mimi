@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     //
+    protected $primaryKey = 't_id';
+
     protected $table = 'transaksi';
+
+    public $timestamps = false;
 
     protected $fillable = [
     	'm_id',

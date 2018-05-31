@@ -36,45 +36,7 @@ table, th, td {
 </style>
 </head>
 <body>
-<nav class="navbar navbar-rose">
-	                  <div class="container">
-	                    <!-- Brand and toggle get grouped for better mobile display -->
-	                    <div class="navbar-header">
-	                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	                        <span class="sr-only">Toggle navigation</span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                      </button>
-	                      <a class="navbar-brand" href="#pablo">MiMi's</a>
-	                    </div>
-
-	                    <!-- Collect the nav links, forms, and other content for toggling -->
-	                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	                      <ul class="nav navbar-nav">
-	                        <li class="active">
-	    						<a href="#pablo">Home</a>
-	    					</li>
-	                        <li>
-	    						<a href="#pablo">Member</a>
-	    					</li>
-							 <li class="active">
-	    						<a href="#pablo">Barang</a>
-	    					</li>
-	                        <li>
-	    						<a href="#pablo">Transaksi</a>
-	    					</li>
-	                      </ul>
-	                      <form class="navbar-form navbar-right" role="search">
-	                        <div class="form-group form-white">
-	                          <input type="text" class="form-control" placeholder="Search">
-	                        </div>
-	                        <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini"><i>S</i></button>
-	                      </form>
-
-	                    </div><!-- /.navbar-collapse -->
-	                  </div><!-- /.container-fluid -->
-	            </nav>
+@include('partials.navbars.navbar')
 <h2 style="font-weight:700; color:#ec008c; text-align:center;">LOG BARANG</h2>
 
 <table style="width:100%">

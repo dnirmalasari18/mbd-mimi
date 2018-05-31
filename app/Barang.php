@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     //
+    protected $primaryKey = 'b_id';
+    public $incrementing = false;
+
     protected $table = 'barang';
+    public $timestamps = 'false';
+
     public function Merk(){
     	return $this->belongsTo('App\Merk','me_id','me_id');
     }

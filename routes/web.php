@@ -41,6 +41,27 @@ Route::get('transaksi/edit','TransaksiController@transaksiEdit');
 Route::get('transaksi/delete','TransaksiController@transaksiDestroy');
 
 Route::get('/member','MemberController@memberIndex');
+
+Route::get('search',function() {
+	$listBarang = App\Barang::select('barang.*')
+	->join('warna','barang.w_id','=','warna.w_id')
+	->join('merk','barang.me_id','=','merk.me_id')
+	->join('ukuran','barang.w_id','=','ukuran.u_id')
+	->join('kategori_barang','barang.kb_id','=','kategori_barang.kb_id')
+	->where('barang.b_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
+	->orWhere('warna.w_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
+	->orWhere('merk.me_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
+	->orWhere('ukuran.u_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
+	->orWhere('kategori.kb_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')->pluck();
+
+	//var_dump($listBarang);
+
+	foreach ($listBarang as $barang) {
+		var_dump($barang);
+		echo "<br><br>";
+	}
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

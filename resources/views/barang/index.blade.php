@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pray.in</title>
+	<title>MiMi's</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" type="image/png" href="{{asset('/img/logo/logo_atas_katholik.png')}}">
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
 	<!-- Animation -->
@@ -52,46 +50,7 @@ th, td {
 </style>
 </head>
 <body>
-<nav class="navbar navbar-rose">
-	                  <div class="container">
-	                    <!-- Brand and toggle get grouped for better mobile display -->
-	                    <div class="navbar-header">
-	                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	                        <span class="sr-only">Toggle navigation</span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                      </button>
-	                      <a class="navbar-brand" href="#pablo">MiMi's</a>
-	                    </div>
-
-	                    <!-- Collect the nav links, forms, and other content for toggling -->
-	                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	                      <ul class="nav navbar-nav">
-	                        <li class="active">
-	    						<a href="#pablo">Home</a>
-	    					</li>
-	                        <li>
-	    						<a href="#pablo">Member</a>
-	    					</li>
-							 <li class="active">
-	    						<a href="#pablo">Barang</a>
-	    					</li>
-	                        <li>
-	    						<a href="#pablo">Transaksi</a>
-	    					</li>
-	                      </ul>
-	                      <form class="navbar-form navbar-right" role="search">
-	                        <div class="form-group form-white">
-	                          <input type="text" class="form-control" placeholder="Search">
-	                        </div>
-	                        <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini"><i>S</i></button>
-	                      </form>
-
-	                    </div><!-- /.navbar-collapse -->
-	                  </div><!-- /.container-fluid -->
-	                </nav>
-<!--        end rose navbar -->
+@include('partials.navbars.navbar')
 	
 <h2 style="text-align:center; font-size:50px; font-weight:700">BARANG</h2>
 <center><a href={{url('/barang/addBarang')}}><button class="btn btn-rose btn-round">Add Barang</button></a>
@@ -111,30 +70,32 @@ th, td {
 			<th></th>
 		  </tr>
 	  @foreach($barang as $b)
+	  @if($b!=null)
 	  <tr>
 		<td rowspan="6">Foto<br>{{$b->nama}}</td>
-		<td>Merk: {{$b->merk->nama_merk}}</td>
+		<td>Merk: {{$b->merk->me_nama}}</td>
 		<td rowspan="6"><form>
-			<center><button class="btn btn-rose" formmethod="get" formaction="/editBarang" type="submit" name="barang_id" value="{{$b->id}}">Edit</button><br></center>
-			<center><button class="btn btn-rose" formmethod="get" formaction="/deleteBarang" type="submit" name="barang_id" value="{{$b->id}}">Delete</button></center>
+			<center><button class="btn btn-rose" formmethod="get" formaction="/editBarang" type="submit" name="barang_id" value="{{$b->b_id}}">Edit</button><br></center>
+			<center><button class="btn btn-rose" formmethod="get" formaction="/deleteBarang" type="submit" name="barang_id" value="{{$b->b_id}}">Delete</button></center>
 			</form>
 		  </td>
 	  </tr>
 	  <tr>
-		<td>Warna: {{$b->warna->nama_warna}}</td>
+		<td>Warna: {{$b->warna->w_nama}}</td>
 	  </tr>
 	  <tr>
-		<td>Ukuran: {{$b->ukuran->ukuran}}</td>
+		<td>Ukuran: {{$b->ukuran->u_nama}}</td>
 	  </tr>
 	  <tr>
-		<td>Kategori: {{$b->kategoriBarang->nama_kategori}}</td>
+		<td>Kategori: {{$b->kategoriBarang->kb_nama_jenis}}</td>
 	  </tr>
 	  <tr>
-		<td>Harga: {{$b->harga}}</td>
+		<td>Harga: {{$b->b_harga}}</td>
 	  </tr>
 	  <tr>
-		<td>Stok: {{$b->stok}}</td>
+		<td>Stok: {{$b->b_stok}}</td>
 	  </tr>
+	  @endif
 	  @endforeach
 	  </table>
 	@endif

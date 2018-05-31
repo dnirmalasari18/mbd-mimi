@@ -31,53 +31,15 @@
 	</style>
 </head>
 <body>
-	<nav class="navbar navbar-rose">
-	                  <div class="container">
-	                    <!-- Brand and toggle get grouped for better mobile display -->
-	                    <div class="navbar-header">
-	                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	                        <span class="sr-only">Toggle navigation</span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                        <span class="icon-bar"></span>
-	                      </button>
-	                      <a class="navbar-brand" href="#pablo">MiMi's</a>
-	                    </div>
-
-	                    <!-- Collect the nav links, forms, and other content for toggling -->
-	                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	                      <ul class="nav navbar-nav">
-	                        <li class="active">
-	    						<a href="#pablo">Home</a>
-	    					</li>
-	                        <li>
-	    						<a href="#pablo">Member</a>
-	    					</li>
-							 <li class="active">
-	    						<a href="#pablo">Barang</a>
-	    					</li>
-	                        <li>
-	    						<a href="#pablo">Transaksi</a>
-	    					</li>
-	                      </ul>
-	                      <form class="navbar-form navbar-right" role="search">
-	                        <div class="form-group form-white">
-	                          <input type="text" class="form-control" placeholder="Search">
-	                        </div>
-	                        <button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini"><i>S</i></button>
-	                      </form>
-
-	                    </div><!-- /.navbar-collapse -->
-	                  </div><!-- /.container-fluid -->
-	            </nav>
+	@include('partials.navbars.navbar')
 	
 	<center><div style="width:40%; background-color:pink; border-radius:20px;">
-	{!! Form::model($barang,['url' => 'editBarang/update/'.$barang->id,'method'=>'put','enctype' => 'multipart/form-data','autocomplete'=>'off']) !!}
+	{!! Form::model($barang,['url' => 'editBarang/update/'.$barang->b_id,'method'=>'put','enctype' => 'multipart/form-data','autocomplete'=>'off']) !!}
 						{{csrf_field()}}
 							
 						<div class="col-12">
-					    	{{Form::label('nama', 'Nama')}}
-					    	{{Form::text('nama',null, ['class'=>'form-control'])}} 
+					    	{{Form::label('b_nama', 'Nama')}}
+					    	{{Form::text('b_nama',null, ['class'=>'form-control'])}} 
 					    	@if( $errors->has('nama') ? ' has-error' : '' )
 					    		<strong>{{ $errors->first('nama') }}</strong>
 					    	@endif
@@ -86,8 +48,13 @@
 					    <br>
 
 					    <div class="col-12">
-					    	{{Form::label('merk_id', 'Merk')}}
-							{{Form::select('merk_id',[''=>'','1'=>'AIRA BY ELZATTA','2'=> 'AIRA MUSLIM BUTIK','3'=>'BELLISMIA','4'=>'BELLYBEE','5'=>'BONITA','6'=>'KAMI IDEA','7'=>'KAMILAA','8'=>'KHANAAN','9'=>'LUBNA','10'=>'MADELEINE','11'=>'MALAIKA','12'=>'MECCANISM','13'=>'MINA','14'=>'NASHWA','15'=>'NRH X NABILIA','16'=>'NUBER','17'=>'PINK SUGAR','18'=>'RIA MIRADA','19'=>'SABAA','20'=>'SAN MARCO','21'=>'SCALA','22'=>'SIMPLICITY','23'=>'SYAFINA','24'=>'VIVI ZUBEDI','25'=>'WHITEMODE','26'=>'YRUMI','27'=>'ZAHRA  SIGNATURE','28'=>'ZALIA','29'=>'ZELENA','30'=>'ZUMARA'],null, ['class'=>'form-control'])}}
+					    	{{Form::label('me_id', 'Merk')}}
+							<select class="form-control" id="me_id" name="me_id">
+                @foreach($merk as $m)
+                  <option value="{{$m->me_id}}">{{$m->me_nama}}</option>
+                @endforeach
+              </select>
+							
 							@if( $errors->has('merk_id') ? ' has-error' : '' )
 					    		<strong>{{ $errors->first('merk') }}</strong>
 					    	@endif
@@ -96,8 +63,12 @@
 						<br>
 
 						<div class="col-12">
-					    	{{Form::label('warna_id', 'Warna')}}
-							{{Form::select('warna_id',[''=>'','1'=>'Beige','2'=> 'Black','3'=>'Blue','4'=>'Brown','5'=>'Gold','6'=>'Green','7'=>'Grey','8'=>'Multi','9'=>'Navy','10'=>'Orange','11'=>'Pink','12'=>'Purple','13'=>'Red','14'=>'Silver','15'=>'White','16'=>'Yellow','17'=>'Maroon','18'=>'Peach','19'=>'Bone','20'=>'Nude','21'=>'Tosca','22'=>'Fuschia','23'=>'Aqua','24'=>'Aero','25'=>'Almond','26'=>'Amber','27'=>'Cream','28'=>'Dandelion','29'=>'Desire','30'=>'Yellow'],null, ['class'=>'form-control'])}}
+					    	{{Form::label('w_id', 'Warna')}}
+					    	<select class="form-control" id="w_id" name="w_id">
+                @foreach($warna as $w)
+                  <option value="{{$w->w_id}}">{{$w->w_nama}}</option>
+                @endforeach
+              </select>
 							@if( $errors->has('warna_id') ? ' has-error' : '' )
 					    		<strong>{{ $errors->first('warna_id') }}</strong>
 					    	@endif
@@ -106,16 +77,25 @@
 						<br>
 
 						<div class="col-12">
-					    	{{Form::label('ukuran_id', 'Ukuran')}}
-							{{Form::select('ukuran_id',[''=>'','1'=>'XS','2'=> 'S','3'=>'M','4'=>'L','5'=>'XL','6'=>'XXL','7'=>'ALL SIZE'],null, ['class'=>'form-control'])}}
+					    	{{Form::label('u_id', 'Ukuran')}}
+					    	<select class="form-control" id="u_id" name="u_id">
+                @foreach($ukuran as $u)
+                  <option value="{{$u->u_id}}">{{$u->u_nama}}</option>
+                @endforeach
+              </select>
 							@if( $errors->has('ukuran_id') ? ' has-error' : '' )
 					    		<strong>{{ $errors->first('ukuran_id') }}</strong>
 					    	@endif
 					    </div>
 					    <br>
 					    <div class="col-12">
-					    	{{Form::label('kategori_barang_id', 'Kategori Barang')}}
-							{{Form::select('kategori_barang_id',[''=>'','1'=>'Dress Muslim','2'=> 'Atasan Muslim','3'=>'Hijab','4'=>'Bawahan Muslim','5'=>'Outwear Muslim','6'=>'Perlengkapan Sholat'],null, ['class'=>'form-control'])}}
+					    	{{Form::label('kb_id', 'Kategori Barang')}}
+					    	<select class="form-control" id="kb_id" name="kb_id">
+                @foreach($kategori as $k)
+                  <option value="{{$k->kb_id}}">{{$k->kb_nama_jenis}}</option>
+                @endforeach
+              </select>
+							
 							@if( $errors->has('kategori_barang_id') ? ' has-error' : '' )
 					    		<strong>{{ $errors->first('kategori_barang_id') }}</strong>
 					    	@endif
@@ -123,8 +103,8 @@
 							
 						<br>
 						<div class="col-12">
-					    	{{Form::label('harga', 'Harga')}}
-							{{Form::text('harga',null, ['class'=>'form-control'])}}
+					    	{{Form::label('b_harga', 'Harga')}}
+							{{Form::text('b_harga',null, ['class'=>'form-control'])}}
 							@if( $errors->has('harga') ? ' has-error' : '' )
 					    		<strong>{{ $errors->first('harga') }}</strong>
 					    	@endif
@@ -133,8 +113,8 @@
 						<br>
 
 						<div class="col-12">
-					    	{{Form::label('stok', 'Stok')}}
-							{{Form::text('stok',null, ['class'=>'form-control'])}}
+					    	{{Form::label('b_stok', 'Stok')}}
+							{{Form::text('b_stok',null, ['class'=>'form-control'])}}
 							@if( $errors->has('stok') ? ' has-error' : '' )
 					    		<strong>{{ $errors->first('stok') }}</strong>
 					    	@endif
@@ -142,8 +122,8 @@
 							
 						<br>
 						<div class="col-12">      
-	                        {{Form::label('foto', 'Image')}}
-	                        {{ Form::file('foto', null, ['class'=>'form-control']) }}
+	                        {{Form::label('b_foto', 'Image')}}
+	                        {{ Form::file('b_foto', null, ['class'=>'form-control']) }}
 	                        @if( $errors->has('image') ? ' has-error' : '' )
 	                            <strong>{{ $errors->first('image') }}</strong>
 	                        @endif

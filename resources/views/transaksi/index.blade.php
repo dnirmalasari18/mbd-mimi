@@ -1,7 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MiMi's</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('css/animations.css')}}" type="text/css">
+  <link href="{{asset('css/material-kitpro.css')}}" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{asset('css/flexslider.css')}}">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="{{asset('css/bootstrap3.css')}}">
+  <link rel="stylesheet" href="{{asset('css/salvattore.css')}}">
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+  
 <style>
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+  border: 3px solid #bc4e9c;
+    border-radius: 5px;
+  
+}
+  th{
+    background: #ec008c;
+    color: white;
+    text-align: center;
+  }
+  .tabelbarang{
+    background: pink;
+  }
+  table tr td{
+    border: 3px solid #bc4e9c;
+    border-radius: 5px;
+    font-weight: 700;
+  }
+  table{
+    border-radius: 5px;
+    background: white;
+  }
+
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -12,15 +61,15 @@ table, th, td {
 </style>
 </head>
 <body>
-
-<h2>Transaksi Index</h2>
-<a href={{url('/transaksi/addTransaksi ')}}><button>Add Transaksi</button></a>
-<a href={{url('/transaksi/log')}}><button>Log</button></a>
-<button>Function</button>
-<button>Procedure</button>
-<button>Index</button>
-<button>Join</button>
-<button>Cursor</button>
+@include('partials.navbars.navbar')
+<center><h2>Transaksi Index</h2>
+<a href={{url('/transaksi/addTransaksi ')}}><button class="btn btn-rose">Add Transaksi</button></a>
+<a href={{url('/transaksi/log')}}><button class="btn btn-rose">Log</button class="btn btn-rose"></a>
+<button class="btn btn-rose">Function</button>
+<button class="btn btn-rose">Procedure</button>
+<button class="btn btn-rose">Index</button>
+<button class="btn btn-rose">Join</button>
+<button class="btn btn-rose">Cursor</button></center>
 @if(count($transaksi)>0)
 <table style="width:100%">
   <tr>
@@ -37,8 +86,9 @@ table, th, td {
     <td rowspan="5">Jumlah</td>
     <td rowspan="5">Harga</td>
     <td rowspan="5">Barang</td>
-    <td rowspan="5"><button>Edit</button>
-      <br><button>Delete</button></td>
+    <td rowspan="5">
+      <center><button class="btn btn-rose">Edit</button>
+      <br><button class="btn btn-rose">Delete</button></center></td>
   </tr>
   <tr>
     <td>Alamat</td>
@@ -66,9 +116,9 @@ table, th, td {
     <td rowspan="5">{{$t->t_status_transaksi}}</td>
     <td rowspan="5">
       <form>
-      <button formaction="{{url('transaksi/edit')}}" formmethod="get" name="transaksi_id" value="{{$t->t_id}}">Edit</button>
+      <center><button class="btn btn-rose" formaction="{{url('transaksi/edit')}}" formmethod="get" name="transaksi_id" value="{{$t->t_id}}">Edit</button></center>
       <br>
-      <button formaction="{{url('transaksi/delete')}}" formmethod="get" name="transaksi_id" value="{{$t->t_id}}">Delete</button>
+      <center><button class="btn btn-rose" formaction="{{url('transaksi/delete')}}" formmethod="get" name="transaksi_id" value="{{$t->t_id}}">Delete</button></center>
       </form>
     </td>
   </tr>

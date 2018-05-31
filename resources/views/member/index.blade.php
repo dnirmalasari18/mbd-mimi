@@ -27,18 +27,17 @@ th, td {
   
   @foreach($member as $m)
   <tr>
-    <td rowspan="3">{{$m->nama}}</td>
-    <td rowspan="3">{{$m->tanggal_lahir}}</td>
-    <td rowspan="2">{{$m->alamat}}</td>
-    <td>Kecamatan: {{$m->kecamatan}}</td>
-    <td rowspan="3">{{$m->email}}</td>
+    <td rowspan="3">{{$m->m_nama}}</td>
+    <td rowspan="2">{{$m->m_alamat}}</td>
+    <td>Kecamatan: {{$m->m_kecamatan}}</td>
+    <td rowspan="3">{{$m->m_email}}</td>
   </tr>
   <tr>
-    <td>Kota: {{$m->kota}}</td>
+    <td>Kota: {{$m->m_kota}}</td>
   </tr>
   <tr>
-    <td>Kode Pos: {{$m->kode_pos}}</td>
-    <td>Provinsi: {{$m->provinsi}}</td>
+    <td>Kode Pos: {{$m->m_kode_pos}}</td>
+    <td>Provinsi: {{$m->m_provinsi}}</td>
   </tr>
   @endforeach
 </table>

@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MiMi's</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('css/animations.css')}}" type="text/css">
+  <link href="{{asset('css/material-kitpro.css')}}" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{asset('css/flexslider.css')}}">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="{{asset('css/bootstrap3.css')}}">
+  <link rel="stylesheet" href="{{asset('css/salvattore.css')}}">
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 </head>
 <body>
+
+	@include('partials.navbars.navbar')
 	{!! Form::open(['action' => 'TransaksiController@transaksiStore','method'=>'POST','enctype' => 'multipart/form-data','autocomplete'=>'off']) !!}
 						{{csrf_field()}}
 
@@ -45,8 +63,9 @@
 					    <br>
 
 						<div class="dorne-add-listings-btn">
-							<br>
-							{{Form::submit('Submit',['class'=>'btn dorne-btn'])}}
+							<br><center>
+							{{Form::submit('Submit',['class'=>'btn btn-rose'])}}
+						</center>
 						</div>
 						{!! Form::close() !!}
 </body>

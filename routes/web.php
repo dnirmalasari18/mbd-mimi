@@ -27,6 +27,10 @@ Route::get('/deleteBarang', 'BarangController@barangDestroy');
 Route::get	('/editBarang', 'BarangController@barangEdit');
 Route::put('/editBarang/update/{id}', 'BarangController@barangUpdate')->name('updateBarang');
 Route::get('barang/log','BarangController@logBarang');
+Route::get('/barang/view','BarangController@viewBarang');
+Route::get('/barang/function','BarangController@fungsiBarang');
+Route::post('/barang/procedure', 'BarangController@procedureBarang');
+Route::get('/barang/join','BarangController@joinBarang');
 //yang belum function, procedure, index, join, cursor
 
 
@@ -49,17 +53,14 @@ Route::get('search',function() {
 	->join('ukuran','barang.w_id','=','ukuran.u_id')
 	->join('kategori_barang','barang.kb_id','=','kategori_barang.kb_id')
 	->where('barang.b_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
-	->orWhere('warna.w_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
-	->orWhere('merk.me_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
-	->orWhere('ukuran.u_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')
-	->orWhere('kategori.kb_nama','like','%'.Illuminate\Support\Facades\Input::get('query').'%')->pluck();
-
-	//var_dump($listBarang);
+	->get();
 
 	foreach ($listBarang as $barang) {
 		var_dump($barang);
 		echo "<br><br>";
 	}
+
+	//return view('barang.index')->with('barang',$listBarang);
 });
 
 Auth::routes();

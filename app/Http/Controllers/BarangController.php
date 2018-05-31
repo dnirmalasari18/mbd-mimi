@@ -9,6 +9,7 @@ use App\KategoriBarang;
 use App\Warna;
 use App\Ukuran;
 use App\Merk;
+use App\LogBarang;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
@@ -128,6 +129,38 @@ class BarangController extends Controller
 	}
 
   public function logBarang(){
-    return view('barang.logBarang'); //nanti di with tabel trigger
+    $lb=LogBarang::all();
+    return view('barang.logBarang')->with('lb',$lb); //nanti di with tabel trigger
+  }
+
+  public function viewBarang(){
+    $vBarang = DB::select("SELECT * from lebih_sepuluh");
+        return view('barang.view')->with('vBarang',$vBarang);//, ['member'=>$member]);
+  }
+
+  public function fungsiBarang(){
+   $fBarang = DB::select("SELECT DISTINCT hitung('Magnolla Clara') AS hMagnolla");
+    return view('barang.fungsi')->with('fBarang',$fBarang);
+  }
+
+  public function procedureBarang(){
+    $hasil = DB::select("CALL diskon_ramadhan('B0001')");
+    return redirect('/barang');
+  }
+
+  public function indexBarang(){
+
+  }
+
+  public function joinBarang(){
+    $join=DB::select("SELECT *, MAX(jml) FROM (SELECT b.*, COUNT(b.b_id) AS jml 
+                        FROM barang b JOIN transaksi t
+                        ON(b.b_id=t.b_id)
+                        GROUP BY b.b_id)z
+                        GROUP BY z.kb_id");
+    return view('barang.join')->with('join',$join);
+  }
+  public function cursorBarang(){
+    
   }
 }

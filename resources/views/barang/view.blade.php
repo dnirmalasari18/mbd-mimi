@@ -37,39 +37,19 @@ table, th, td {
 </head>
 <body>
 @include('partials.navbars.navbar')
-<h2 style="font-weight:700; color:#ec008c; text-align:center;">LOG BARANG</h2>
+<h2 style="font-weight:700; color:#ec008c; text-align:center;">View menampilkan nama barang yang dibeli jumlahnya lebih dari 10</h2>
 
-@if(count($lb)>0)
-<table style="width:100%">
+@if(count($vBarang)>0)
+<center><table style="width:40%">
   <tr>
-    <th>Barang ID</th>
-    <th>Merk</th>
-    <th>Warna</th>
-    <th>Ukuran</th>
-    <th>Kategori Barang</th>
     <th>Nama Barang</th>
-    <th>Harga</th>
-    <th>Stok</th>
-    <th>Foto</th>
-    <th>Tanggal Perubahan</th>
-    <th>Status</th>
   </tr>
-  @foreach($lb as $l)
+  @foreach($vBarang as $v)
   <tr>
-      <td>{{$l->b_id}}</td>
-      <td>{{$l->me_id}}</td>
-      <td>{{$l->w_id}}</td>
-      <td>{{$l->u_id}}</td>
-      <td>{{$l->kb_id}}</td>
-      <td>{{$l->b_nama}}</td>
-      <td>{{$l->b_harga}}</td>
-      <td>{{$l->b_stok}}</td>
-      <td>{{$l->b_foto}}</td>
-      <td>{{$l->tgl_perubahan}}</td>
-      <td>{{$l->status}}</td>
+      <td>{{$v->b_nama}}</td>
   </tr>
   @endforeach
-</table>
+</table></center>
 @endif
 
 </body>

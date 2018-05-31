@@ -55,12 +55,17 @@ th, td {
 <h2 style="text-align:center; font-size:50px; font-weight:700">BARANG</h2>
 <center><a href={{url('/barang/addBarang')}}><button class="btn btn-rose btn-round">Add Barang</button></a>
 <a href={{url('/barang/log')}}><button class="btn btn-rose btn-round">Log</button></a>
-<button class="btn btn-rose btn-round">Function</button>
-<button class="btn btn-rose btn-round">Procedure</button>
+<a href={{url('/barang/view')}}><button class="btn btn-rose btn-round">View</button></a>
+<a href={{url('/barang/function')}}><button class="btn btn-rose btn-round">Function</button></a>
+<form action={{url('/barang/procedure')}} role="form" method="POST">
+	<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	<button class="btn btn-rose btn-round" type="submit">Procedure</button>
+</form> 
 <button class="btn btn-rose btn-round">Index</button>
-<button class="btn btn-rose btn-round">Join</button>
-	<button class="btn btn-rose btn-round">Cursor</button></center>
-
+<a href={{url('/barang/join')}}><button class="btn btn-rose btn-round">Join</button></a>
+<button class="btn btn-rose btn-round">Cursor</button>
+</center>
+Procedure diskon 5% jika baju warna hijau atau pink
 <div class="tabelbarang" style="margin-bottom:50px;">		
 	@if(count($barang)>0)
 	  <table align="center" style="width:50%; margin-top: 100px;">
